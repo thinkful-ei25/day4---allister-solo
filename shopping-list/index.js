@@ -5,6 +5,7 @@ function addItem() {
     event.preventDefault();
     let itemToAdd = $('.js-shopping-list-entry').val();
     console.log(itemToAdd);
+    event.target.reset();
     $('.shopping-list').append(`
       <li>
         <span class="shopping-item">${itemToAdd}</span>
@@ -21,4 +22,15 @@ function addItem() {
   });
 }
 
+function checkItem() {
+$('.shopping-item-toggle').click(function(event) {
+  const selected = $(event.target).closest('.shopping-item-controls').prev()
+  console.log(selected);
+  selected.toggleClass('shopping-item__checked');
+  
+});
+
+}
+
 $(addItem);
+$(checkItem);
