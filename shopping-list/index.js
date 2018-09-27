@@ -23,19 +23,19 @@ function addItem() {
 }
 
 function checkItem() {
-$('.shopping-item-toggle').click(function(event) {
+$('ul').on('click', '.shopping-item-toggle', (function(event) {
   const selected = $(event.target).closest('.shopping-item-controls').prev();
   console.log(selected);
   selected.toggleClass('shopping-item__checked');
   
-});
+}));
 }
 
 function removeItem() {
-  $('.shopping-item-delete').click(function(event) {
+  $('ul').on('click', '.shopping-item-delete', (function(event) {
     const selected = $(event.target).closest('li');
       selected.remove();
-  });
+  }));
 
 }
 
