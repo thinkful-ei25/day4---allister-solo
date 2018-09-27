@@ -24,13 +24,23 @@ function addItem() {
 
 function checkItem() {
 $('.shopping-item-toggle').click(function(event) {
-  const selected = $(event.target).closest('.shopping-item-controls').prev()
+  const selected = $(event.target).closest('.shopping-item-controls').prev();
   console.log(selected);
   selected.toggleClass('shopping-item__checked');
   
 });
+}
+
+function removeItem() {
+  $('.shopping-item-delete').click(function(event) {
+    const selected = $(event.target).closest('li');
+      selected.remove();
+  });
 
 }
 
+
+
 $(addItem);
 $(checkItem);
+$(removeItem);
